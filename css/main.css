@@ -186,8 +186,9 @@ main {
   color: hsl(var(--white));
   font-size: 3rem;
   font-weight: 700;
-  display: inline-block;
+  display: block;
   width: 100%;
+  line-height: 1.25;
 }
 
 .summary {
@@ -207,7 +208,7 @@ main {
 .result-element {
   display: grid;
   grid-template-columns: 3rem 3fr 2fr;
-  padding: 1rem 0 1rem 0;
+  padding: 1rem 0;
   border-radius: 0.5rem;
 }
 
@@ -278,15 +279,43 @@ button:focus-visible {
   .flex-wrapper {
     flex-flow: row;
     justify-content: center;
-    width: 738px;
+    width: 700px;
+    box-shadow: 0.5rem 1rem 3rem hsl(var(--dark-gray-blue), 0.2);
+    border-radius: 2rem;
   }
   .results {
     width: 50%;
     border-radius: 2rem;
+    gap: 1.25rem;
+  }
+  .results .score-display {
+    width: 11rem;
+    height: 11rem;
+  }
+  c .results .score-display span {
+    font-size: 3.75rem;
+  }
+  .results p {
+    font-size: 0.9rem;
+    max-width: 65%;
+    padding: 0;
+  }
+  .results h1 {
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+  .results h2 {
+    font-size: 1.75rem;
+    padding-top: 1.5rem;
+    line-height: 0.5;
   }
   .summary {
     width: 50%;
     border-radius: 2rem;
-    padding: 1.5rem 2rem 0 2rem;
+    padding: 1.5rem 2rem 1.5rem 2rem;
+  }
+  .summary h3 {
+    font-size: 1.25rem;
+    line-height: 1.5;
   }
 }
