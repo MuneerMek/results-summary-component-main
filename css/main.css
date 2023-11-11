@@ -292,7 +292,7 @@ button:focus-visible {
     width: 11rem;
     height: 11rem;
   }
-  c .results .score-display span {
+  .results .score-display span {
     font-size: 3.75rem;
   }
   .results p {
