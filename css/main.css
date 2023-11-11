@@ -270,12 +270,23 @@ button:focus-visible {
   background: var(--gradient);
 }
 
-/* Attribution */
-
-.attribution {
-  font-size: 11px;
-  text-align: center;
-}
-.attribution a {
-  color: hsl(228, 45%, 44%);
+/* Media Queries */
+@media only screen and (min-width: 900px) {
+  main {
+    height: 100vh;
+  }
+  .flex-wrapper {
+    flex-flow: row;
+    justify-content: center;
+    width: 738px;
+  }
+  .results {
+    width: 50%;
+    border-radius: 2rem;
+  }
+  .summary {
+    width: 50%;
+    border-radius: 2rem;
+    padding: 1.5rem 2rem 0 2rem;
+  }
 }
