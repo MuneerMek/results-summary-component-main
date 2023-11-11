@@ -92,20 +92,29 @@ textarea:not([rows]) {
 /* Root Colors */
 :root {
   /* Primary */
-  --light-red: hsl(0, 100%, 67%);
-  --orangey-yellow: hsl(39, 100%, 56%);
-  --green-teal: hsl(166, 100%, 37%);
-  --cobalt-blue: hsl(234, 85%, 45%);
+  --light-red: 0, 100%, 67%;
+  --orangey-yellow: 39, 100%, 56%;
+  --green-teal: 166, 100%, 37%;
+  --cobalt-blue: 234, 85%, 45%;
   /* Gradients */
   --light-slate-blue-bg: hsl(252, 100%, 67%);
   --light-royal-blue-bg: hsl(241, 81%, 54%);
   --violet-blue-circle: hsla(256, 72%, 46%, 1);
   --persian-blue-circle: hsla(241, 72%, 46%, 0);
   /* Neutral */
-  --white: hsl(0, 0%, 100%);
+  --white: 0, 0%, 100%;
   --pale-blue: hsl(221, 100%, 96%);
   --light-lavender: hsl(241, 100%, 89%);
-  --dark-gray-blue: hsl(224, 30%, 27%);
+  --dark-gray-blue: 224, 30%, 27%;
+  /* Gradient */
+  --gradient: linear-gradient(
+    var(--light-slate-blue-bg),
+    var(--light-royal-blue-bg)
+  );
+  --circle-gradient: linear-gradient(
+    var(--violet-blue-circle),
+    var(--persian-blue-circle)
+  );
 }
 
 /* General Styles */
@@ -138,7 +147,7 @@ main {
   align-items: center;
   text-align: center;
   gap: 1rem;
-  background: var(--light-slate-blue-bg);
+  background: var(--gradient);
   border-radius: 0 0 2rem 2rem;
 }
 
@@ -146,14 +155,14 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: violet;
+  background: var(--circle-gradient);
   width: 8.5rem;
   height: 8.5rem;
   border-radius: 50%;
 }
 
 .results h2 {
-  color: var(--white);
+  color: hsl(var(--white));
 }
 
 .results p {
@@ -174,7 +183,7 @@ main {
 }
 
 .score-display p span {
-  color: var(--white);
+  color: hsl(var(--white));
   font-size: 3rem;
   font-weight: 700;
   display: inline-block;
@@ -182,10 +191,10 @@ main {
 }
 
 .summary {
-  padding: 1.25rem;
+  padding: 1.5rem 1.25rem 0 1.25rem;
   display: flex;
   flex-flow: column;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .summary .grid-columns {
@@ -199,35 +208,44 @@ main {
   display: grid;
   grid-template-columns: 3rem 3fr 2fr;
   padding: 1rem 0 1rem 0;
+  border-radius: 0.5rem;
 }
 
 .result-element p {
   font-weight: 700;
-  color: var(--dark-gray-blue);
+  color: hsl(var(--dark-gray-blue));
   justify-self: flex-end;
   padding-right: 1rem;
 }
 
+.result-element p span {
+  color: #999ba8;
+}
+
 .result-element img {
-  height: 1.5rem;
+  height: 1.25rem;
   width: 100%;
 }
 
+.result-element h4 {
+  line-height: 1.5;
+}
+
 .result-element:nth-child(1) {
-  color: var(--light-red);
+  color: hsl(var(--light-red));
   background: hsl(var(--light-red), 0.1);
 }
 .result-element:nth-child(2) {
-  color: var(--orangey-yellow);
-  background: hsl(var(--light-red), 0.1);
+  color: hsl(var(--orangey-yellow));
+  background: hsl(var(--orangey-yellow), 0.1);
 }
 .result-element:nth-child(3) {
-  color: var(--green-teal);
-  background: hsl(var(--light-red), 0.1);
+  color: hsl(var(--green-teal));
+  background: hsl(var(--green-teal), 0.1);
 }
 .result-element:nth-child(4) {
-  color: var(--cobalt-blue);
-  background: hsl(var(--light-red), 0.1);
+  color: hsl(var(--cobalt-blue));
+  background: hsl(var(--cobalt-blue), 0.1);
 }
 
 picture {
@@ -237,17 +255,19 @@ picture {
   /* flex-shrink? */
 }
 
-.result-element h4 {
-  line-height: 1.5;
-}
-
-.result-element p span {
-  color: var(--light-lavender);
-}
-
 .summary button {
   width: 100%;
+  border: none;
   border-radius: 2rem;
+  background: hsl(var(--dark-gray-blue));
+  color: hsl(var(--white));
+  padding: 0.85rem;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus-visible {
+  background: var(--gradient);
 }
 
 /* Attribution */
@@ -256,6 +276,6 @@ picture {
   font-size: 11px;
   text-align: center;
 }
-attribution a {
+.attribution a {
   color: hsl(228, 45%, 44%);
 }
